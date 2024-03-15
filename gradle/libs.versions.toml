@@ -19,11 +19,18 @@ lifecycleRuntimeCompose ="2.7.0"
 coil_version ="2.6.0"
 room_version = "2.6.1"
 font_version = "1.6.3"
+coroutine_test_version ="1.7.3"
+coroutine_test_v ="1.4.2"
+mock_version ="1.13.5"
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+mock = {module ="io.mockk:mockk" ,version.ref ="mock_version"}
+test-slf4={ group= "org.slf4j", name="slf4j-simple", version ="2.0.6"}
+coroutine-test ={ module ="org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm" ,version.ref ="coroutine_test_version"}
+coroutine-test-tes ={ module ="org.jetbrains.kotlinx:kotlinx-coroutines-test" ,version.ref ="coroutine_test_v"}
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
