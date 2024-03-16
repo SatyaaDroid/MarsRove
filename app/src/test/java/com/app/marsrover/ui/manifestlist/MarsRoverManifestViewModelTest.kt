@@ -1,4 +1,4 @@
-package com.app.marsrover.uimanifestlist
+package com.app.marsrover.ui.manifestlist
 
 import com.app.marsrover.MainCoroutineRule
 import com.app.marsrover.data.MarsRoverManifestRepo
@@ -67,7 +67,6 @@ class MarsRoverManifestViewModelTest {
         val result = marsRoverManifestViewModel.roverManifestUiState.first()
 
         //Then
-
         assertEquals(expectedResult,result)
 
     }

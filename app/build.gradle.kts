@@ -62,6 +62,7 @@ dependencies {
     testImplementation(libs.coroutine.test.tes)
     testImplementation(libs.mock)
     testImplementation(libs.test.slf4)
+    testImplementation("org.testng:testng:6.9.6")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
