@@ -1,6 +1,6 @@
 
-#MarsRover APP
-featch Data from API and show user can also save that data in DB 
+MarsRover APP
+- featch Data from API and show user can also save that data in DB 
 
 
 Technologies Used
