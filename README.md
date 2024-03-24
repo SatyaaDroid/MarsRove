@@ -1,6 +1,7 @@
 
 MarsRover APP
-- featch Data from API and show user can also save that data in DB 
+- featch Data from API and show user can also save that data in DB
+  for study 
 
 
 Technologies Used
@@ -10,4 +11,6 @@ Technologies Used
 - MVVM Architecture
 - Hilt Dependency Injection
 - Room Database
+- Unit Testing
+- UI Testing
   
