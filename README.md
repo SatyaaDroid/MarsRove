@@ -6,6 +6,8 @@ MarsRover APP
 Technologies Used
 - JetPack Compose
 - Kotlin
+- Retrofit 
 - MVVM Architecture
 - Hilt Dependency Injection
 - Room Database
+  
