@@ -6,19 +6,17 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.app.marsrover.model.RoverManifestUiModel
-import com.app.marsrover.model.RoverPhotoUiModel
+import com.app.marsrover.data.model.RoverManifestUiModel
+import com.app.marsrover.data.model.RoverPhotoUiModel
 import com.app.marsrover.ui.theme.MarsroverTheme
-import com.app.marsrover.view.ManifestList
-import com.app.marsrover.view.PhotoList
-import com.app.marsrover.view.RoverList
+import com.app.marsrover.ui.screens.ManifestList
+import com.app.marsrover.ui.screens.PhotoList
+import com.app.marsrover.ui.screens.RoverList
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import org.junit.Assert.*
 import org.junit.Rule
 
 /**

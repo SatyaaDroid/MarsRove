@@ -1,12 +1,11 @@
 package com.app.marsrover.service
 
 import com.app.marsrover.BuildConfig
-import com.app.marsrover.service.mode.RoverPhotoRemoteModel
+import com.app.marsrover.service.model.RoverPhotoRemoteModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

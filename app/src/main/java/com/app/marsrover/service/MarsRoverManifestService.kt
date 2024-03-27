@@ -1,8 +1,7 @@
 package com.app.marsrover.service
 
-import android.os.Debug
 import com.app.marsrover.BuildConfig
-import com.app.marsrover.service.mode.RoverManifestRemoteModel
+import com.app.marsrover.service.model.RoverManifestRemoteModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
