@@ -1,7 +1,6 @@
 
 MarsRover APP
 - featch Data from API and show user can also save that data in DB
-  for study 
 
 
 Technologies Used
