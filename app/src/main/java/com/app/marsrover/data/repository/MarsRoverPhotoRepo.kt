@@ -62,19 +62,19 @@ class MarsRoverPhotoRepo @Inject constructor(
             }
         }
 
-    suspend fun savePhoto(roverPhotoUiModel: RoverPhotoUiModel) {
-        marsRoverSavedPhotoDao.insert(toDbModel(roverPhotoUiModel))
-    }
-
-    suspend fun removePhoto(roverPhotoUiModel: RoverPhotoUiModel) {
-        marsRoverSavedPhotoDao.delete(toDbModel(roverPhotoUiModel))
-    }
-
-    fun getAllSaved(): Flow<RoverPhotoUiState> =
-        marsRoverSavedPhotoDao.getAllSaved().map { localModel ->
-            RoverPhotoUiState.Success(toUiModel(localModel))
-
-        }
+//    suspend fun savePhoto(roverPhotoUiModel: RoverPhotoUiModel) {
+//        marsRoverSavedPhotoDao.insert(toDbModel(roverPhotoUiModel))
+//    }
+//
+//    suspend fun removePhoto(roverPhotoUiModel: RoverPhotoUiModel) {
+//        marsRoverSavedPhotoDao.delete(toDbModel(roverPhotoUiModel))
+//    }
+//
+//    fun getAllSaved(): Flow<RoverPhotoUiState> =
+//        marsRoverSavedPhotoDao.getAllSaved().map { localModel ->
+//            RoverPhotoUiState.Success(toUiModel(localModel))
+//
+//        }
 
 
 //    fun getMarsRoverPhoto(

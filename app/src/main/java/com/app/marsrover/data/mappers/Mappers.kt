@@ -1,21 +1,33 @@
 package com.app.marsrover.data.mappers
 
 
+import com.app.marsrover.data.model.ManifestPhotoRemoteModel
 import com.app.marsrover.data.model.RoverManifestRemoteModel
 import com.app.marsrover.data.model.RoverPhotoRemoteModel
 import com.app.marsrover.domain.model.RoverManifestUiModel
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 
 
-fun RoverManifestRemoteModel.toDomain(): List<RoverManifestUiModel> {
-    return this.photoManifestRemoteModel.photos.map { photo ->
+//fun RoverManifestRemoteModel.toDomain(): List<RoverManifestUiModel> {
+//    return this.photoManifestRemoteModel.photos.map { photo ->
+//        RoverManifestUiModel(
+//            sol = photo.sol.toString(),
+//            earthDate = photo.earthDate.toString(),
+//            photoNumber = photo.totalPhotos.toString()
+//        )
+//    }
+//}
+
+fun List<ManifestPhotoRemoteModel>.toDomain(): List<RoverManifestUiModel>{
+    return map {
         RoverManifestUiModel(
-            sol = photo.sol.toString(),
-            earthDate = photo.earthDate.toString(),
-            photoNumber = photo.totalPhotos.toString()
+            sol = it.sol.toString(),
+            earthDate = it.earthDate,
+            photoNumber = it.totalPhotos.toString()
         )
     }
 }
+
 
 
 fun RoverPhotoRemoteModel.toDomain(): List<RoverPhotoUiModel> {

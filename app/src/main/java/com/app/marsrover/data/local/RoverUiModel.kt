@@ -11,13 +11,13 @@ data class RoverUiModel(
 
 val roverUiModelList = listOf(
     RoverUiModel(
-        "perseverance",
+        "Perseverance",
         R.drawable.perseverance,
         landingDate = "18 February 2021",
         distance = "12.56 km"
     ),
     RoverUiModel(
-        "curiosity",
+        "Curiosity",
         R.drawable.curiosity,
         landingDate = "6 August 2012",
         distance = "29.56 km"

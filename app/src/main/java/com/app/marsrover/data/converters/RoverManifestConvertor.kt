@@ -5,10 +5,10 @@ import com.app.marsrover.data.common.RoverManifestUiState
 import com.app.marsrover.data.model.RoverManifestRemoteModel
 
 fun toUiModel(roverManifestRemoteModel: RoverManifestRemoteModel): RoverManifestUiState =
-    RoverManifestUiState.Success(roverManifestRemoteModel.photoManifestRemoteModel.photos.map { photo ->
+    roverManifestRemoteModel.photoManifestRemoteModel.photos?.map { photo ->
         RoverManifestUiModel(
             sol = photo.sol.toString(),
             earthDate = photo.earthDate.toString(),
             photoNumber = photo.totalPhotos.toString()
         )
-    }.sorted())
+    }?.let { RoverManifestUiState.Success(it.sorted()) }!!

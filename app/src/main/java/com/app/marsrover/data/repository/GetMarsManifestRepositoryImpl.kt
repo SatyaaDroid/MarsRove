@@ -11,7 +11,7 @@ class GetMarsManifestRepositoryImpl @Inject constructor(
     private val api: Api
 ) : GetMarsRoverManifestRepository {
     override suspend fun getMarsRoverManifest(roverName: String): List<RoverManifestUiModel> {
-        val roverManifestRemoteModel = api.getMarsRoverManifest(roverName)
-        return roverManifestRemoteModel.toDomain()
+//        val roverManifestRemoteModel = api.getMarsRoverManifest(roverName)
+        return api.getMarsRoverManifest(roverName).photoManifestRemoteModel.photos!!.toDomain()
     }
 }

@@ -16,8 +16,7 @@ class GetMarsRoverManifestUseCase @Inject constructor(
     operator fun invoke(roverName: String): Flow<Resource<List<RoverManifestUiModel>>> = flow {
         emit(Resource.Loading())
         try {
-            emit(
-                Resource.Success( data = getMarsRoverManifestRepository.getMarsRoverManifest(roverName)))
+            emit(Resource.Success( data = getMarsRoverManifestRepository.getMarsRoverManifest(roverName)))
         } catch (throwable: Throwable) {
             emit(Resource.Error(message = throwable.message.toString()))
         }

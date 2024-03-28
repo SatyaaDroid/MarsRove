@@ -60,8 +60,11 @@ object AppModule {
 
 
     @Provides
-    fun providesGetMarsRoverPhotoRepository(api: Api): GetMarsRoverPhotoRepository {
-        return GetMarsRoverPhotoRepositoryImpl(api)
+    fun providesGetMarsRoverPhotoRepository(
+        api: Api,
+        marsRoverSavedPhotoDao: MarsRoverSavedPhotoDao
+    ): GetMarsRoverPhotoRepository {
+        return GetMarsRoverPhotoRepositoryImpl(api, marsRoverSavedPhotoDao)
     }
 
     @Provides

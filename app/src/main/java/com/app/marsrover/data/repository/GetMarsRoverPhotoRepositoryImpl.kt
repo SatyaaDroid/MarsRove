@@ -1,13 +1,19 @@
 package com.app.marsrover.data.repository
 
+import com.app.marsrover.data.converters.toDbModel
+import com.app.marsrover.data.converters.toUiModel
 import com.app.marsrover.data.mappers.toDomain
 import com.app.marsrover.data.network.Api
+import com.app.marsrover.db.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.repository.GetMarsRoverPhotoRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class GetMarsRoverPhotoRepositoryImpl @Inject constructor(
-    private val api: Api
+    private val api: Api,
+    private val marsRoverSavedPhotoDao: MarsRoverSavedPhotoDao
 ) : GetMarsRoverPhotoRepository {
 
 
@@ -18,6 +24,27 @@ class GetMarsRoverPhotoRepositoryImpl @Inject constructor(
         val roverPhotoRemoteModel = api.getMarsRoverPhotos(roverName, sol)
         return roverPhotoRemoteModel.toDomain()
     }
+
+    override suspend fun savePhoto(roverPhotoUiModel: RoverPhotoUiModel) {
+        marsRoverSavedPhotoDao.insert(toDbModel(roverPhotoUiModel))
+    }
+
+    override suspend fun removePhoto(roverPhotoUiModel: RoverPhotoUiModel) {
+        marsRoverSavedPhotoDao.delete(toDbModel(roverPhotoUiModel))
+    }
+
+    override suspend fun allSavedIds(sol: String, roverName: String): Flow<List<Int>> {
+      return  marsRoverSavedPhotoDao.allSavedIds(sol,roverName)
+    }
+
+
+
+    override suspend fun getAllSavedData(): Flow<List<RoverPhotoUiModel>> {
+        return marsRoverSavedPhotoDao.getAllSaved().map { localModel ->
+            toUiModel(localModel)
+        }
+    }
+
 
 
 }

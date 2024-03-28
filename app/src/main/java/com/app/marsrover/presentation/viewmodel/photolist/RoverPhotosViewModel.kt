@@ -6,7 +6,9 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.marsrover.data.common.Resource
+import com.app.marsrover.data.common.RoverPhotoUiState
 import com.app.marsrover.di.IoDispatcher
+import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.use_cases.GetMarsRoverPhotoUseCase
 import com.app.marsrover.presentation.stackholders.PhotosStateHolder
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -63,5 +65,15 @@ class RoverPhotosViewModel @Inject constructor(
             }
         }.launchIn(viewModelScope)
 
+    }
+
+    fun changeSaveStatus(roverPhotoUiModel: RoverPhotoUiModel) {
+        viewModelScope.launch(ioDispatcher) {
+            if (roverPhotoUiModel.isSaved) {
+                getMarsRoverPhotoUseCase.removePhoto(roverPhotoUiModel)
+            } else {
+                getMarsRoverPhotoUseCase.savePhoto(roverPhotoUiModel)
+            }
+        }
     }
 }

@@ -35,15 +35,15 @@ class MarsRoverPhotoViewModel @Inject constructor(
         }
     }
 
-    fun changeSaveStatus(roverPhotoUiModel: RoverPhotoUiModel) {
-        viewModelScope.launch(ioDispatcher) {
-            if (roverPhotoUiModel.isSaved) {
-                marsRoverPhotoRepo.removePhoto(roverPhotoUiModel)
-            } else {
-                marsRoverPhotoRepo.savePhoto(roverPhotoUiModel)
-            }
-
-        }
-
-    }
+//    fun changeSaveStatus(roverPhotoUiModel: RoverPhotoUiModel) {
+//        viewModelScope.launch(ioDispatcher) {
+//            if (roverPhotoUiModel.isSaved) {
+//                marsRoverPhotoRepo.removePhoto(roverPhotoUiModel)
+//            } else {
+//                marsRoverPhotoRepo.savePhoto(roverPhotoUiModel)
+//            }
+//
+//        }
+//
+//    }
 }

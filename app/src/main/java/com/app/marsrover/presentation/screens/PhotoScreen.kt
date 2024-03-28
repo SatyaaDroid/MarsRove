@@ -30,8 +30,10 @@ fun PhotoScreen(
 
         result.data.let {
             if (it != null) {
-                PhotoList(modifier = modifier, roverPhotoUiModelList = it) {
-
+                PhotoList(modifier = modifier,
+                    roverPhotoUiModelList = it
+                ) {roverPhotoUiModel ->
+                    roverPhotosViewModel.changeSaveStatus(roverPhotoUiModel)
                 }
             }
 

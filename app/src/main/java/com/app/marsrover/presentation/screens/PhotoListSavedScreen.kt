@@ -1,25 +1,21 @@
 package com.app.marsrover.presentation.screens
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.app.marsrover.data.common.RoverPhotoUiState
-import com.app.marsrover.presentation.viewmodel.savedlist.MarsRoverSavedViewModel
+import com.app.marsrover.presentation.viewmodel.savedlist.RoverSavedViewModel
 
 
 @Composable
 fun PhotoListSavedScreen(
     modifier: Modifier = Modifier,
-    marsRoverSavedViewModel: MarsRoverSavedViewModel
+    roverSavedViewModel: RoverSavedViewModel
 ) {
 
-    val viewState by marsRoverSavedViewModel.marsPhotoUiSavedState.collectAsStateWithLifecycle()
+//    val viewState by marsRoverSavedViewModel.marsPhotoUiSavedState.collectAsStateWithLifecycle()
 
-    LaunchedEffect(Unit) {
-        marsRoverSavedViewModel.getAllSaved()
-    }
+//    LaunchedEffect(Unit) {
+//        marsRoverSavedViewModel.getAllSaved()
+//    }
 
 //    when (val roverPhotoUiState = viewState) {
 //        RoverPhotoUiState.Error -> Error()
@@ -33,5 +29,27 @@ fun PhotoListSavedScreen(
 //        )
 //
 //    }
+
+
+    val result = roverSavedViewModel.savedPhotosStateHolder.value
+
+    if (result.isLoading) {
+        Loading()
+    }
+
+    if (result.error.isNotBlank()) {
+        Error()
+    }
+
+    result.data.let {
+        if (it != null) {
+            PhotoList(modifier = modifier,
+                roverPhotoUiModelList = it,
+                onClick = {roverPhotoUiModel->
+                    roverSavedViewModel.changeSaveStatus(roverPhotoUiModel)
+                }
+            )
+        }
+    }
 
 }

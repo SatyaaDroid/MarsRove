@@ -9,7 +9,7 @@ data class PhotoManifestRemoteModel(
     @field:SerializedName("max_Date") val maxDate: String,
     @field:SerializedName("max_Sol") val maxSol: String,
     val name:String,
-    val photos:List<ManifestPhotoRemoteModel>,
+    val photos:List<ManifestPhotoRemoteModel>?,
     val status:String,
     @field:SerializedName("total_photos") val totalPhotos:Int
 
