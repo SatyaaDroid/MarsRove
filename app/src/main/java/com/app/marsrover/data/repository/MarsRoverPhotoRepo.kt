@@ -1,12 +1,12 @@
 package com.app.marsrover.data.repository
 
 import com.app.marsrover.db.MarsRoverSavedPhotoDao
-import com.app.marsrover.data.model.RoverPhotoUiModel
-import com.app.marsrover.data.model.RoverPhotoUiState
+import com.app.marsrover.data.common.RoverPhotoUiModel
+import com.app.marsrover.data.common.RoverPhotoUiState
 import com.app.marsrover.data.converters.toDbModel
 import com.app.marsrover.data.converters.toUiModel
-import com.app.marsrover.service.MarsRoverPhotoService
-import com.app.marsrover.service.model.RoverPhotoRemoteModel
+import com.app.marsrover.data.network.Api
+import com.app.marsrover.data.model.RoverPhotoRemoteModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class MarsRoverPhotoRepo @Inject constructor(
-    private val marsRoverPhotoService: MarsRoverPhotoService,
+    private val api: Api,
     private val marsRoverSavedPhotoDao: MarsRoverSavedPhotoDao
 ) {
 
@@ -23,7 +23,7 @@ class MarsRoverPhotoRepo @Inject constructor(
         roverName: String, sol: String
     ): Flow<RoverPhotoRemoteModel?> = flow {
         try {
-            val networkRequest = marsRoverPhotoService.getMarsRoverPhotos(
+            val networkRequest = api.getMarsRoverPhotos(
                 roverName.lowercase(),
                 sol.lowercase()
             )

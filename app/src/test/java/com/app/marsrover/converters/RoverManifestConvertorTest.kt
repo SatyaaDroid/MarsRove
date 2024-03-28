@@ -1,11 +1,11 @@
 package com.app.marsrover.converters
 
 import com.app.marsrover.data.converters.toUiModel
-import com.app.marsrover.data.model.RoverManifestUiModel
-import com.app.marsrover.data.model.RoverManifestUiState
-import com.app.marsrover.service.model.ManifestPhotoRemoteModel
-import com.app.marsrover.service.model.PhotoManifestRemoteModel
-import com.app.marsrover.service.model.RoverManifestRemoteModel
+import com.app.marsrover.data.common.RoverManifestUiModel
+import com.app.marsrover.data.common.RoverManifestUiState
+import com.app.marsrover.data.model.ManifestPhotoRemoteModel
+import com.app.marsrover.data.model.PhotoManifestRemoteModel
+import com.app.marsrover.data.model.RoverManifestRemoteModel
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 

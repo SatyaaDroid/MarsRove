@@ -1,6 +1,6 @@
 package com.app.marsrover.data.converters
 
-import com.app.marsrover.data.model.RoverPhotoUiModel
+import com.app.marsrover.data.common.RoverPhotoUiModel
 import com.app.marsrover.db.MarsRoverSavedLocalModel
 
 fun toDbModel(roverPhotoUiModel: RoverPhotoUiModel): MarsRoverSavedLocalModel =
