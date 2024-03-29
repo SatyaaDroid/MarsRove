@@ -38,29 +38,3 @@ fun ManifestScreen(
 
 }
 
-//@Composable
-//fun ManifestScreen(
-//    modifier: Modifier,
-//    roverName: String?,
-//    marsRoverManifestViewModel: MarsRoverManifestViewModel,
-//    onClick: (roverName: String, sol: String) -> Unit
-//) {
-//    val viewState by marsRoverManifestViewModel.roverManifestUiState.collectAsStateWithLifecycle()
-//
-//    if (roverName != null) {
-//        LaunchedEffect(Unit) {
-//            marsRoverManifestViewModel.getMarsRoverManifest(roverName)
-//        }
-//        when (val roverManifestUiState = viewState) {
-//            RoverManifestUiState.Error -> Error()
-//            RoverManifestUiState.Loading -> Loading()
-//            is RoverManifestUiState.Success -> ManifestList(
-//                modifier = modifier,
-//                roverManifestUiModelList = roverManifestUiState.roverManifestUiModelList,
-//                roverName = roverName,
-//                onClick = onClick
-//            )
-//        }
-//    }
-//
-//}

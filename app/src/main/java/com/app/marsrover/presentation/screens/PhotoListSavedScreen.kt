@@ -11,24 +11,6 @@ fun PhotoListSavedScreen(
     roverSavedViewModel: RoverSavedViewModel
 ) {
 
-//    val viewState by marsRoverSavedViewModel.marsPhotoUiSavedState.collectAsStateWithLifecycle()
-
-//    LaunchedEffect(Unit) {
-//        marsRoverSavedViewModel.getAllSaved()
-//    }
-
-//    when (val roverPhotoUiState = viewState) {
-//        RoverPhotoUiState.Error -> Error()
-//        RoverPhotoUiState.Loading -> Loading()
-//        is RoverPhotoUiState.Success -> PhotoList(
-//            modifier =modifier,
-//            roverPhotoUiModelList =roverPhotoUiState.roverPhotoUiModelList,
-//            onClick = {roverPhotoUiModel->
-//                marsRoverSavedViewModel.changeSaveStatus(roverPhotoUiModel)
-//            }
-//        )
-//
-//    }
 
 
     val result = roverSavedViewModel.savedPhotosStateHolder.value

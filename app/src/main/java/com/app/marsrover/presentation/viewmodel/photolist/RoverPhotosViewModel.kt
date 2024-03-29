@@ -67,7 +67,7 @@ class RoverPhotosViewModel @Inject constructor(
     }
 
     fun changeSaveStatus(roverPhotoUiModel: RoverPhotoUiModel) {
-        viewModelScope.launch(ioDispatcher) {
+        viewModelScope.launch {
             if (roverPhotoUiModel.isSaved) {
                 getMarsRoverPhotoUseCase.removePhoto(roverPhotoUiModel)
             } else {

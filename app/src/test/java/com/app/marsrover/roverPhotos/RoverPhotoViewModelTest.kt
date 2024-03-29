@@ -3,6 +3,7 @@ package com.app.marsrover.roverPhotos
 import androidx.lifecycle.SavedStateHandle
 import com.app.marsrover.MainCoroutineRule
 import com.app.marsrover.data.common.Resource
+import com.app.marsrover.db.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.use_cases.GetMarsRoverPhotoUseCase
 import com.app.marsrover.presentation.viewmodel.photolist.RoverPhotosViewModel
@@ -12,6 +13,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.mock
 
@@ -24,6 +26,9 @@ class RoverPhotoViewModelTest {
     private val roverPhotoUiModel = mock<List<RoverPhotoUiModel>>()
     private val roverName = "Perseverance"
     private val sol = "0"
+
+    @Mock
+    lateinit var marsRoverSavedPhotoDao: MarsRoverSavedPhotoDao
 
     @Before
     fun setUp() {

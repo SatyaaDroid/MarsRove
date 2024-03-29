@@ -1,13 +1,19 @@
 package com.app.marsrover.roverPhotos
 
+import com.app.marsrover.data.repository.GetMarsRoverPhotoRepositoryImpl
+import com.app.marsrover.db.MarsRoverSavedLocalModel
+import com.app.marsrover.db.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.repository.GetMarsRoverPhotoRepository
 import com.app.marsrover.domain.use_cases.GetMarsRoverPhotoUseCase
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
+import org.mockito.Mockito
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.`when`
 
@@ -36,16 +42,115 @@ class RoverPhotoUseCaseTest {
     }
 
     @Test
-    fun returnErrorFromRoverPhotoUseCase()= runTest {
+    fun returnErrorFromRoverPhotoUseCase() = runTest {
         `when`(getMarsRoverPhotoRepository.getMarsRoverPhotos(roverName, sol)).thenThrow(
             RuntimeException("Something went wrong")
         )
 
         getMarsRoverPhotoUseCase.invoke(roverName, sol).onEach {
-            Assert.assertEquals("Something went wrong",it.message)
+            Assert.assertEquals("Something went wrong", it.message)
         }
 
     }
 
+
+    @Test
+    fun returnSuccessWhenAddDataInDB() = runTest {
+        val roverPhotoUiModel = RoverPhotoUiModel(
+            id = 2,
+            roverName = "Perseverance",
+            imgSrc = "https://example.com/photo1",
+            sol = "20",
+            earthDate = "2022-07-02",
+            cameraFullName = "Camera One",
+            isSaved = true
+        )
+
+        `when`(getMarsRoverPhotoRepository.savePhoto(roverPhotoUiModel)).thenAnswer { Unit }
+
+
+        getMarsRoverPhotoUseCase.savePhoto(roverPhotoUiModel)
+
+        Mockito.verify(getMarsRoverPhotoRepository).savePhoto(roverPhotoUiModel)
+
+    }
+
+    @Test
+    fun returnSuccessWhenRemoveInDB() = runTest {
+        val roverPhotoUiModel = RoverPhotoUiModel(
+            id = 2,
+            roverName = "Perseverance",
+            imgSrc = "https://example.com/photo1",
+            sol = "20",
+            earthDate = "2022-07-02",
+            cameraFullName = "Camera One",
+            isSaved = true
+        )
+
+        `when`(getMarsRoverPhotoRepository.removePhoto(roverPhotoUiModel)).thenAnswer { Unit }
+
+
+        getMarsRoverPhotoUseCase.removePhoto(roverPhotoUiModel)
+
+        Mockito.verify(getMarsRoverPhotoRepository).removePhoto(roverPhotoUiModel)
+
+    }
+
+    @Test
+    fun returnSuccessWhenAllDataRetriveFromDB() = runTest {
+
+        val marsRoverSavedLocalModelList = listOf(
+            RoverPhotoUiModel(
+                id = 2,
+                roverName = "Perseverance",
+                imgSrc = "https://example.com/photo1",
+                sol = "20",
+                earthDate = "2022-07-02",
+                cameraFullName = "Camera One",
+                isSaved = true
+            ),
+            RoverPhotoUiModel(
+                id = 4,
+                roverName = "Perseverance",
+                imgSrc = "https://example.com/photo2",
+                sol = "20",
+                earthDate = "2022-07-02",
+                cameraFullName = "Camera Two",
+                isSaved = true
+            )
+        )
+
+
+        `when`(getMarsRoverPhotoRepository.getAllSavedData()).thenReturn(
+            flowOf(marsRoverSavedLocalModelList)
+        )
+
+
+        val result = getMarsRoverPhotoUseCase.getAllSavedData().first()
+
+        val exceptedResult = listOf(
+            RoverPhotoUiModel(
+                id = 2,
+                roverName = "Perseverance",
+                imgSrc = "https://example.com/photo1",
+                sol = "20",
+                earthDate = "2022-07-02",
+                cameraFullName = "Camera One",
+                isSaved = true
+            ),
+            RoverPhotoUiModel(
+                id = 4,
+                roverName = "Perseverance",
+                imgSrc = "https://example.com/photo2",
+                sol = "20",
+                earthDate = "2022-07-02",
+                cameraFullName = "Camera Two",
+                isSaved = true
+            )
+        )
+
+        Assert.assertEquals(exceptedResult, result)
+
+    }
 
 }
