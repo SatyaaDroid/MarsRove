@@ -1,14 +1,6 @@
 package com.app.marsrover.data.common
 
 
-sealed class RoverPhotoUiState {
-	data class Success(
-		val roverPhotoUiModelList: List<RoverPhotoUiModel>
-	) : RoverPhotoUiState()
-	object Loading : RoverPhotoUiState()
-	object Error : RoverPhotoUiState()
-}
-
 data class RoverPhotoUiModel(
 	val id: Int,
 	val roverName: String,

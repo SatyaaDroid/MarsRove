@@ -8,15 +8,6 @@ import com.app.marsrover.domain.model.RoverManifestUiModel
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 
 
-//fun RoverManifestRemoteModel.toDomain(): List<RoverManifestUiModel> {
-//    return this.photoManifestRemoteModel.photos.map { photo ->
-//        RoverManifestUiModel(
-//            sol = photo.sol.toString(),
-//            earthDate = photo.earthDate.toString(),
-//            photoNumber = photo.totalPhotos.toString()
-//        )
-//    }
-//}
 
 fun List<ManifestPhotoRemoteModel>.toDomain(): List<RoverManifestUiModel>{
     return map {

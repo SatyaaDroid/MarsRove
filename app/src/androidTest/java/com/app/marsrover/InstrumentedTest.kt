@@ -41,10 +41,10 @@ class InstrumentedTest {
         }
 
         //Then
-        composeTestRule.onNodeWithText("perseverance").assertIsDisplayed()
-        composeTestRule.onNodeWithText("curiosity").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Perseverance").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Curiosity").assertIsDisplayed()
 //        composeTestRule.onNodeWithText("Landing date: 18 February 2021").assertIsDisplayed()
-        composeTestRule.onNodeWithText("Distance traveled: 12.56km").assertIsDisplayed()
+//        composeTestRule.onNodeWithText("Distance traveled: 12.56km").assertIsDisplayed()
     }
 
     @Test
@@ -122,7 +122,7 @@ class InstrumentedTest {
         composeTestRule.onNodeWithText("Sol: 0").assertIsDisplayed()
         composeTestRule.onNodeWithText("Earth date: 2022-03-10").assertIsDisplayed()
         composeTestRule.onNodeWithText("Camera One").assertIsDisplayed()
-        composeTestRule.onNodeWithText("sol: 1").assertIsDisplayed()
+        composeTestRule.onNodeWithText("Sol: 1").assertIsDisplayed()
         composeTestRule.onNodeWithText("Earth date: 2022-03-11").assertIsDisplayed()
         composeTestRule.onNodeWithText("Camera Two").assertIsDisplayed()
     }

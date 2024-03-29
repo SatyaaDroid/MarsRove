@@ -1,13 +1,5 @@
 package com.app.marsrover.data.common
 
-sealed class RoverManifestUiState{
-    data class Success(
-         val roverManifestUiModelList: List<RoverManifestUiModel>
-    ): RoverManifestUiState()
-    object Loading: RoverManifestUiState()
-    object Error: RoverManifestUiState()
-
-}
 
 data class RoverManifestUiModel(
     val sol:String,

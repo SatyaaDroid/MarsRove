@@ -111,6 +111,8 @@ dependencies {
     //font
     implementation(libs.androidx.font)
 
+    //mockito
+    testImplementation ("org.mockito:mockito-core:5.8.0")
 
 
 

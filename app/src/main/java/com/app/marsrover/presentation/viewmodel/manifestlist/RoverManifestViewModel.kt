@@ -6,17 +6,11 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.marsrover.data.common.Resource
-import com.app.marsrover.data.common.RoverManifestUiState
-import com.app.marsrover.data.common.RoverPhotoUiModel
-import com.app.marsrover.data.common.RoverPhotoUiState
-import com.app.marsrover.data.converters.toUiModel
 import com.app.marsrover.di.IoDispatcher
-import com.app.marsrover.presentation.stackholders.ManifestStateHolder
 import com.app.marsrover.domain.use_cases.GetMarsRoverManifestUseCase
+import com.app.marsrover.presentation.stackholders.ManifestStateHolder
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -37,7 +31,7 @@ class RoverManifestViewModel @Inject constructor(
     val roverManifestStateHolder: State<ManifestStateHolder> = _roverManifeststateHolder
 
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(ioDispatcher) {
             savedStateHandle.getStateFlow("roverName", "").collectLatest {
                 getRoverManifestList(it)
             }

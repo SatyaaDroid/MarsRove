@@ -6,7 +6,6 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.marsrover.data.common.Resource
-import com.app.marsrover.data.common.RoverPhotoUiState
 import com.app.marsrover.di.IoDispatcher
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.use_cases.GetMarsRoverPhotoUseCase
