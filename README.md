@@ -7,7 +7,7 @@ Technologies Used
 - JetPack Compose
 - Kotlin
 - Retrofit 
-- MVVM Architecture
+- MVVM-MVI Clean Architecture
 - Hilt Dependency Injection
 - Room Database
 - Unit Testing
