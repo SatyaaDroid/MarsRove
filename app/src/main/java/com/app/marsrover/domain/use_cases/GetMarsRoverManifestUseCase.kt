@@ -1,6 +1,6 @@
 package com.app.marsrover.domain.use_cases
 
-import com.app.marsrover.data.common.Resource
+import com.app.marsrover.core.common.Resource
 
 import com.app.marsrover.domain.model.RoverManifestUiModel
 import com.app.marsrover.domain.repository.GetMarsRoverManifestRepository

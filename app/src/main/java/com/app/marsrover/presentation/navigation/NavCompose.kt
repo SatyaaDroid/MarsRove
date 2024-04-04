@@ -24,10 +24,10 @@ import com.app.marsrover.presentation.navigation.Destination.Manifest
 import com.app.marsrover.presentation.navigation.Destination.Photo
 import com.app.marsrover.presentation.navigation.Destination.Saved
 import com.app.marsrover.presentation.ui.theme.MarsroverTheme
-import com.app.marsrover.presentation.screens.ManifestScreen
-import com.app.marsrover.presentation.screens.PhotoListSavedScreen
-import com.app.marsrover.presentation.screens.PhotoScreen
-import com.app.marsrover.presentation.screens.RoverList
+import com.app.marsrover.presentation.marsrovers.screens.ManifestScreen
+import com.app.marsrover.presentation.marsrovers.screens.PhotoListSavedScreen
+import com.app.marsrover.presentation.marsrovers.screens.PhotoScreen
+import com.app.marsrover.presentation.marsrovers.screens.RoverList
 
 @Composable
 fun NavCompose() {

@@ -2,11 +2,11 @@ package com.app.marsrover.roverPhotos
 
 import androidx.lifecycle.SavedStateHandle
 import com.app.marsrover.MainCoroutineRule
-import com.app.marsrover.data.common.Resource
-import com.app.marsrover.db.MarsRoverSavedPhotoDao
+import com.app.marsrover.core.common.Resource
+import com.app.marsrover.data.db.dao.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.use_cases.GetMarsRoverPhotoUseCase
-import com.app.marsrover.presentation.viewmodel.photolist.RoverPhotosViewModel
+import com.app.marsrover.presentation.marsrovers.viewmodel.RoverPhotosViewModel
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert

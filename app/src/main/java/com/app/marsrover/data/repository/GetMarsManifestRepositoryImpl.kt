@@ -1,8 +1,8 @@
 package com.app.marsrover.data.repository
 
 
-import com.app.marsrover.data.mappers.toDomain
-import com.app.marsrover.data.network.Api
+import com.app.marsrover.data.remote.mappers.toDomain
+import com.app.marsrover.data.remote.network.Api
 import com.app.marsrover.domain.model.RoverManifestUiModel
 import com.app.marsrover.domain.repository.GetMarsRoverManifestRepository
 import javax.inject.Inject

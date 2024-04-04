@@ -31,8 +31,8 @@ sealed class Screen(
     @StringRes val resourceId: Int,
     @DrawableRes val drawableId: Int
 ) {
-    object Home : Screen("home", R.string.rover, R.drawable.ic_mars_rover)
+    data object Home : Screen("home", R.string.rover, R.drawable.ic_mars_rover)
 
-    object Saved : Screen("Saved", R.string.saved, R.drawable.ic_save)
+    data object Saved : Screen("Saved", R.string.saved, R.drawable.ic_save)
 
 }

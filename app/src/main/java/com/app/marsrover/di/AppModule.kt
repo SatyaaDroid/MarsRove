@@ -1,11 +1,11 @@
 package com.app.marsrover.di
 
 import android.content.Context
-import com.app.marsrover.data.network.Api
+import com.app.marsrover.data.remote.network.Api
 import com.app.marsrover.data.repository.GetMarsManifestRepositoryImpl
 import com.app.marsrover.data.repository.GetMarsRoverPhotoRepositoryImpl
-import com.app.marsrover.db.MarsRoverSavedDatabase
-import com.app.marsrover.db.MarsRoverSavedPhotoDao
+import com.app.marsrover.data.db.MarsRoverSavedDatabase
+import com.app.marsrover.data.db.dao.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.use_cases.GetMarsRoverManifestUseCase
 import com.app.marsrover.domain.repository.GetMarsRoverManifestRepository
 import com.app.marsrover.domain.repository.GetMarsRoverPhotoRepository

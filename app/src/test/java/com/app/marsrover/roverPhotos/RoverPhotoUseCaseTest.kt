@@ -1,8 +1,5 @@
 package com.app.marsrover.roverPhotos
 
-import com.app.marsrover.data.repository.GetMarsRoverPhotoRepositoryImpl
-import com.app.marsrover.db.MarsRoverSavedLocalModel
-import com.app.marsrover.db.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.repository.GetMarsRoverPhotoRepository
 import com.app.marsrover.domain.use_cases.GetMarsRoverPhotoUseCase

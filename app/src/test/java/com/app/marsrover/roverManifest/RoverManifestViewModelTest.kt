@@ -2,10 +2,10 @@ package com.app.marsrover.roverManifest
 
 import androidx.lifecycle.SavedStateHandle
 import com.app.marsrover.MainCoroutineRule
-import com.app.marsrover.data.common.Resource
+import com.app.marsrover.core.common.Resource
 import com.app.marsrover.domain.model.RoverManifestUiModel
 import com.app.marsrover.domain.use_cases.GetMarsRoverManifestUseCase
-import com.app.marsrover.presentation.viewmodel.manifestlist.RoverManifestViewModel
+import com.app.marsrover.presentation.marsrovers.viewmodel.RoverManifestViewModel
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert

@@ -1,12 +1,12 @@
 package com.app.marsrover.roverPhotos
 
 import com.app.marsrover.MainCoroutineRule
-import com.app.marsrover.data.mappers.toDomain
-import com.app.marsrover.data.model.RoverPhotoRemoteModel
-import com.app.marsrover.data.network.Api
+import com.app.marsrover.data.remote.mappers.toDomain
+import com.app.marsrover.data.remote.model.RoverPhotoRemoteModel
+import com.app.marsrover.data.remote.network.Api
 import com.app.marsrover.data.repository.GetMarsRoverPhotoRepositoryImpl
-import com.app.marsrover.db.MarsRoverSavedLocalModel
-import com.app.marsrover.db.MarsRoverSavedPhotoDao
+import com.app.marsrover.data.db.entity.MarsRoverSavedLocalModel
+import com.app.marsrover.data.db.dao.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.repository.GetMarsRoverPhotoRepository
 import kotlinx.coroutines.flow.first

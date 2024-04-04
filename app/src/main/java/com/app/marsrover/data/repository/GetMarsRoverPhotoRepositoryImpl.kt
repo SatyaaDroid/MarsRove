@@ -1,10 +1,10 @@
 package com.app.marsrover.data.repository
 
-import com.app.marsrover.data.converters.toDbModel
-import com.app.marsrover.data.converters.toUiModel
-import com.app.marsrover.data.mappers.toDomain
-import com.app.marsrover.data.network.Api
-import com.app.marsrover.db.MarsRoverSavedPhotoDao
+import com.app.marsrover.data.remote.converters.toDbModel
+import com.app.marsrover.data.remote.converters.toUiModel
+import com.app.marsrover.data.remote.mappers.toDomain
+import com.app.marsrover.data.remote.network.Api
+import com.app.marsrover.data.db.dao.MarsRoverSavedPhotoDao
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.domain.repository.GetMarsRoverPhotoRepository
 import kotlinx.coroutines.flow.Flow

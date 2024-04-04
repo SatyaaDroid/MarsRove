@@ -1,9 +1,9 @@
 package com.app.marsrover.roverManifest
 
 import com.app.marsrover.MainCoroutineRule
-import com.app.marsrover.data.mappers.toDomain
-import com.app.marsrover.data.model.RoverManifestRemoteModel
-import com.app.marsrover.data.network.Api
+import com.app.marsrover.data.remote.mappers.toDomain
+import com.app.marsrover.data.remote.model.RoverManifestRemoteModel
+import com.app.marsrover.data.remote.network.Api
 import com.app.marsrover.data.repository.GetMarsManifestRepositoryImpl
 import com.app.marsrover.domain.repository.GetMarsRoverManifestRepository
 import kotlinx.coroutines.test.runTest

@@ -10,9 +10,9 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.app.marsrover.domain.model.RoverManifestUiModel
 import com.app.marsrover.domain.model.RoverPhotoUiModel
 import com.app.marsrover.presentation.ui.theme.MarsroverTheme
-import com.app.marsrover.presentation.screens.ManifestList
-import com.app.marsrover.presentation.screens.PhotoList
-import com.app.marsrover.presentation.screens.RoverList
+import com.app.marsrover.presentation.marsrovers.screens.ManifestList
+import com.app.marsrover.presentation.marsrovers.screens.PhotoList
+import com.app.marsrover.presentation.marsrovers.screens.RoverList
 
 import org.junit.Test
 import org.junit.runner.RunWith

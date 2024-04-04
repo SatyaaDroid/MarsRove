@@ -6,4 +6,5 @@ import com.app.marsrover.domain.model.RoverManifestUiModel
 interface GetMarsRoverManifestRepository {
     suspend fun getMarsRoverManifest(roverName: String): List<RoverManifestUiModel>
 
+
 }
