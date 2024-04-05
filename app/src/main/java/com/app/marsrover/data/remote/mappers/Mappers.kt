@@ -22,7 +22,7 @@ fun List<ManifestPhotoRemoteModel>.toDomain(): List<RoverManifestUiModel>{
 
 
 fun RoverPhotoRemoteModel.toDomain(): List<RoverPhotoUiModel> {
-    return this.photos.map { it ->
+    return this.photos?.map { it ->
         RoverPhotoUiModel(
             id = it.id,
             roverName = it.rover.name,
@@ -33,6 +33,6 @@ fun RoverPhotoRemoteModel.toDomain(): List<RoverPhotoUiModel> {
             isSaved = false
         )
 
-    }
+    } ?: emptyList()
 }
 
